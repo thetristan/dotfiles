@@ -15,6 +15,21 @@ setopt prompt_subst
 autoload -U promptinit
 promptinit
 
+
+VIMODE=" ⨀"
+# If I am using vi keys, I want to know what mode I'm currently using.
+# zle-keymap-select is executed every time KEYMAP changes.
+# From http://zshwiki.org/home/examples/zlewidgets
+function zle-keymap-select {
+    VIMODE="${${KEYMAP/vicmd/ ⨁}/(main|viins)/ ⨀}"
+    zle reset-prompt
+}
+
+zle -N zle-keymap-select
+bindkey -v
+
+
+# CUSTOM PROMPT
 bell=`tput bel` 
 precmd () { 
   vcs_info
@@ -29,16 +44,17 @@ precmd () {
 } 
 PROMPT='%m %B%3c%(#.#.>)%b ' 
 PROMPT2="%_> "
-RPROMPT='${vcs_info_msg_0_}'
+RPROMPT='${vcs_info_msg_0_}$VIMODE'
 
-export EDITOR='mvim'
+export EDITOR='mvim -f'
 
 PATH=$PATH:~/bin
 export PATH
 
-# edit this rc file 
+# edit this rc file
+alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
 alias rcedit='mvim -f ~/.zshrc && source ~/.zshrc'
-alias hostsedit='mvim -f /etc/hosts && dscacheutil -flushcache'
+alias hostsedit='sudo mvim -f /etc/hosts && dscacheutil -flushcache'
 
 # standard git commands
 alias g='git'

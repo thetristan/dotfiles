@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/tblease/.vim/bundle'
 let g:netrw_dirhist_2='/Users/tblease/.vim/bundle/tabular'
 let g:netrw_dirhist_3='/workspace/groupon/app/views/dale/style_guide'
 let g:netrw_dirhist_4='/workspace/groupon-vm'
+let g:netrw_dirhist_5='/Users/tblease/dotfiles'
+let g:netrw_dirhist_6='/Users/tblease/dotfiles/vim'
+let g:netrw_dirhist_7='/Users/tblease/dotfiles/vim/bundle'

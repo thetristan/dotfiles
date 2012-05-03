@@ -6,22 +6,17 @@ echo Creating symbolic links to dotfile assets...
 cd ~
 
 # Set up vim folder
-if [ -d .vim ]
-  then
-    rm -rf .vim
-    ln -s dotfiles/vim .vim
-fi
+[ -d .vim ] && rm -rf .vim
+ln -s dotfiles/vim .vim
 
 # Set up vimrc
-if [ -e .vimrc ]
-  then 
-    rm .vimrc
-    ln -s dotfiles/vimrc .vimrc
-fi
+[ -e .vimrc ] && rm .vimrc
+ln -s dotfiles/vimrc .vimrc
+
+# Set up gvimrc
+[ -e .gvimrc ] && rm .gvimrc
+ln -s dotfiles/gvimrc .gvimrc
 
 # Set up zshrc
-if [ -e .zshrc ]
-  then 
-    rm .zshrc
-    ln -s dotfiles/zshrc .zshrc
-fi
+[ -e .zshrc ] && rm .zshrc
+ln -s dotfiles/zshrc .zshrc
