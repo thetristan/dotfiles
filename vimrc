@@ -40,6 +40,12 @@ map! <F2> :call TrimWhiteSpace()<CR>
 
 
 " ======================================
+" TABULARIZE SHORTCUTS
+map <leader>>= :Tabularize /^.\{-}=\@=
+map <leader>>: :Tabularize /^.\{-}:\@=
+
+
+" ======================================
 " EDITING SETTINGS
 
 " Show status line
@@ -74,6 +80,36 @@ set showbreak=\ \ \ \
 let mapleader=","
 
 
+" ======================================
+" NEXT/PREV BUFFERS
+map <leader>[ :bp<CR>
+map <leader>] :bn<CR>
+map <leader><leader> <C-^>
+
+
+" ======================================
+" VISUAL UP/DOWN
+
+map <up> gk
+map k gk
+imap <up> <C-o>gk
+map <down> gj
+map j gj
+imap <down> <C-o>gj
+map E ge
+
+
+
+" ======================================
+" GROUPON-APP SPECIFIC CTRLP MAPPINGS
+
+map <leader>gc :CtrlPClearCache<cr>\|:CtrlP app/controllers<cr>
+map <leader>gv :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
+map <leader>gm :CtrlPClearCache<cr>\|:CtrlP app/models<cr>
+map <leader>gh :CtrlPClearCache<cr>\|:CtrlP app/helpers<cr>
+map <leader>gj :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
+map <leader>gc :CtrlPClearCache<cr>\|:CtrlP public/coffeescripts<cr>
+map <leader>gs :CtrlPClearCache<cr>\|:CtrlP public/stylesheets<cr>
 
 
 " ======================================
@@ -84,12 +120,29 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dll$\|\.DS_Store$',
   \ }
 
-map <D-t> :CtrlP<CR>
-imap <D-t> <C-c>:CtrlP<CR>
-map <D-/> :CtrlPBuffer<CR>
-imap <D-/> <C-c>:CtrlPBuffer<CR>
-map <D-r> :CtrlPMRU<CR>
-imap <D-r> <C-c>:CtrlPMRU<CR>
+map <leader>t :CtrlP<CR>
+map <leader>/ :CtrlPBuffer<CR>
+map <leader>r :CtrlPMRU<CR>
+
+
+
+" ======================================
+" FILE NAVIGATION
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>e :edit %%
+map <leader>v :view %%
+
+
+
+" ======================================
+" WINDOW SIZING
+
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
 
 
 
