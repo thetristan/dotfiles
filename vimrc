@@ -76,6 +76,9 @@ set linebreak
 set nolist
 set showbreak=\ \ \ \
 
+" Highlight current line
+set cursorline
+
 " Map leader
 let mapleader=","
 
@@ -108,7 +111,7 @@ map <leader>gv :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
 map <leader>gm :CtrlPClearCache<cr>\|:CtrlP app/models<cr>
 map <leader>gh :CtrlPClearCache<cr>\|:CtrlP app/helpers<cr>
 map <leader>gj :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
-map <leader>gc :CtrlPClearCache<cr>\|:CtrlP public/coffeescripts<cr>
+map <leader>gjj :CtrlPClearCache<cr>\|:CtrlP public/coffeescripts<cr>
 map <leader>gs :CtrlPClearCache<cr>\|:CtrlP public/stylesheets<cr>
 
 

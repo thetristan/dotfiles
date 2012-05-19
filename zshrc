@@ -2,7 +2,8 @@
 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' cache-path ~/.zsh/cache
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
 zstyle ':completion:*' max-errors 2
 zstyle ':completion:*' use-cache on
 zstyle :compinstall filename '/Users/tblease/.zshrc'
