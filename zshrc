@@ -1,12 +1,7 @@
 # The following lines were added by compinstall
 
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' cache-path ~/.zsh/cache
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
-zstyle ':completion:*' max-errors 2
-zstyle ':completion:*' use-cache on
-zstyle :compinstall filename '/Users/tblease/.zshrc'
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle :compinstall filename '/Users/tristan/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -18,7 +13,6 @@ autoload -Uz vcs_info
 setopt prompt_subst
 autoload -U promptinit
 promptinit
-
 
 VIMODE=" ⨀"
 # If I am using vi keys, I want to know what mode I'm currently using.
@@ -55,7 +49,6 @@ export EDITOR='mvim -f'
 alias vi='mvim'
 alias vim='mvim'
 
-
 # path management
 PATH=$PATH:~/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -72,6 +65,7 @@ alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
 
 # standard git commands
 alias g='git'
+alias gf='git fresh'
 alias ga='git add'
 alias gi='git init'
 alias gc='git commit -m'
@@ -93,12 +87,27 @@ alias vr='vagrant reload'
 alias vh='vagrant halt'
 alias vv='cd ~/vagrants/groupon'
 
-
 # colored output ls
 alias ls='ls -G'
-
 
 # aliases for pushd/popd
 alias p='pushd'
 alias o='popd'
 alias s='cd -'
+
+# clear the screen before every search
+alias ack='clear && ack'
+
+# RVM Misc
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
+rvm_project_rvmrc_default=1
+rvm_trust_rvmrcs_flag=1
+
+# Optimize Ruby for speed
+export RUBY_HEAP_MIN_SLOTS=500000
+export RUBY_HEAP_SLOTS_INCREMENT=250000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=50000000
+
+# Use bundle exec errors when executing rake
+alias rake='bundle exec rake'

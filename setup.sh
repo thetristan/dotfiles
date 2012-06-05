@@ -2,6 +2,8 @@
 
 echo Creating symbolic links to dotfile assets...
 
+(
+
 # Go home
 cd ~
 
@@ -20,3 +22,13 @@ ln -s dotfiles/gvimrc .gvimrc
 # Set up zshrc
 [ -e .zshrc ] && rm .zshrc
 ln -s dotfiles/zshrc .zshrc
+
+# Tmux configuration
+[ -e .tmux.conf ] && rm .tmux.conf
+ln -s dotfiles/tmux.conf .tmux.conf
+
+# dotjs
+[ -d .js ] && rm -rf .js
+ln -s dotfiles/js .js
+
+)

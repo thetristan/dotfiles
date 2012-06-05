@@ -18,6 +18,13 @@ set background=dark
 colorscheme solarized
 
 
+" ======================================
+" FOLDING SETTINGS
+
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
 " ======================================
 " WHITESPACE MANAGEMENT
@@ -104,7 +111,7 @@ map E ge
 
 
 " ======================================
-" GROUPON-APP SPECIFIC CTRLP MAPPINGS
+" RAILS-SPECIFIC CTRLP MAPPINGS
 
 map <leader>gc :CtrlPClearCache<cr>\|:CtrlP app/controllers<cr>
 map <leader>gv :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
@@ -123,9 +130,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dll$\|\.DS_Store$',
   \ }
 
-map <leader>t :CtrlP<CR>
-map <leader>/ :CtrlPBuffer<CR>
-map <leader>r :CtrlPMRU<CR>
+map <leader>gg :CtrlP<CR>
+map <leader>gb :CtrlPBuffer<CR>
+map <leader>gr :CtrlPMRU<CR>
 
 
 
@@ -134,6 +141,11 @@ map <leader>r :CtrlPMRU<CR>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
+
+
+" ======================================
+" HIGHLIGHTING
+:noremap hh :set hlsearch! hlsearch?<CR>
 
 
 
