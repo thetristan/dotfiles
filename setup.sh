@@ -27,7 +27,7 @@ ln -s dotfiles/zshrc .zshrc
 [ -e .tmux.conf ] && rm .tmux.conf
 ln -s dotfiles/tmux.conf .tmux.conf
 
-# dotjs
+# dotjs - see http://defunkt.io/dotjs/
 [ -d .js ] && rm -rf .js
 ln -s dotfiles/js .js
 

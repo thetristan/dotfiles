@@ -117,9 +117,11 @@ map <leader>gc :CtrlPClearCache<cr>\|:CtrlP app/controllers<cr>
 map <leader>gv :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
 map <leader>gm :CtrlPClearCache<cr>\|:CtrlP app/models<cr>
 map <leader>gh :CtrlPClearCache<cr>\|:CtrlP app/helpers<cr>
-map <leader>gj :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
-map <leader>gjj :CtrlPClearCache<cr>\|:CtrlP public/coffeescripts<cr>
+map <leader>gjj :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
+map <leader>gjc :CtrlPClearCache<cr>\|:CtrlP public/coffeescripts<cr>
 map <leader>gs :CtrlPClearCache<cr>\|:CtrlP public/stylesheets<cr>
+map <leader>gtc :CtrlPClearCache<cr>\|:CtrlP features<cr>
+map <leader>gtt :CtrlPClearCache<cr>\|:CtrlP spec<cr>
 
 
 " ======================================
@@ -130,10 +132,14 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dll$\|\.DS_Store$',
   \ }
 
-map <leader>gg :CtrlP<CR>
-map <leader>gb :CtrlPBuffer<CR>
-map <leader>gr :CtrlPMRU<CR>
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
+  \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
+map <leader>gg :CtrlP<CR>
+map <leader>b :CtrlPBuffer<CR>
+map <leader>m :CtrlPMixed<CR>
+map <leader>gr :CtrlPMRU<CR>
+map <leader>tt :silent !ctags %<CR> :CtrlPBufTag<CR>
 
 
 " ======================================
@@ -167,15 +173,14 @@ set winheight=999
 let Tlist_Show_Menu = 1
 let Tlist_Use_Right_Window = 1
 
-nnoremap <silent> <C-`> :TlistToggle<CR>
-
+nnoremap <silent> <leader>ty :TlistToggle<CR>
 
 
 " ======================================
 " NERDTREE
 
 let NERDTreeChDirMode=2
-nnoremap <C-t> :NERDTreeToggle .<CR>
+nnoremap <leader>tr :NERDTreeToggle .<CR>
 
 
 

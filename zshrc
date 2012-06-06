@@ -87,8 +87,8 @@ alias vr='vagrant reload'
 alias vh='vagrant halt'
 alias vv='cd ~/vagrants/groupon'
 
-# colored output ls
-alias ls='ls -G'
+# colored output ls w/ details by default
+alias ls='ls -Gla'
 
 # aliases for pushd/popd
 alias p='pushd'
@@ -111,3 +111,7 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 
 # Use bundle exec errors when executing rake
 alias rake='bundle exec rake'
+
+# folder aliases
+alias wga='cd /workspace/groupon-app'
+alias wp='cd /workspace/personal'
