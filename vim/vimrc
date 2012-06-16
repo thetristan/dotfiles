@@ -26,6 +26,21 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
+
+
+" ======================================
+" SCROLL OFF
+:nnoremap <Leader>zz :call ToggleScrollOff()<CR>
+
+function! ToggleScrollOff()
+  :if &scrolloff == 999
+    set so=5
+  :else
+    set so=999
+  :endif
+:endfunction
+set so=5
+
 " ======================================
 " WHITESPACE MANAGEMENT
 
@@ -48,8 +63,8 @@ map! <F2> :call TrimWhiteSpace()<CR>
 
 " ======================================
 " TABULARIZE SHORTCUTS
-map <leader>>= :Tabularize /^.\{-}=\@=
-map <leader>>: :Tabularize /^.\{-}:\@=
+map <leader>>= :Tabularize /=
+map <leader>>; :Tabularize /:\zs
 
 
 " ======================================
@@ -96,6 +111,10 @@ map <leader>[ :bp<CR>
 map <leader>] :bn<CR>
 map <leader><leader> <C-^>
 
+map <leader><Left> <C-w><Left>
+map <leader><Right> <C-w><Right>
+map <leader><Down> <C-w><Down>
+map <leader><Up> <C-w><Up>
 
 " ======================================
 " VISUAL UP/DOWN
@@ -113,15 +132,16 @@ map E ge
 " ======================================
 " RAILS-SPECIFIC CTRLP MAPPINGS
 
-map <leader>gc :CtrlPClearCache<cr>\|:CtrlP app/controllers<cr>
-map <leader>gv :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
-map <leader>gm :CtrlPClearCache<cr>\|:CtrlP app/models<cr>
-map <leader>gh :CtrlPClearCache<cr>\|:CtrlP app/helpers<cr>
-map <leader>gjj :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
-map <leader>gjc :CtrlPClearCache<cr>\|:CtrlP public/coffeescripts<cr>
+map <leader>gac :CtrlPClearCache<cr>\|:CtrlP app/controllers<cr>
+map <leader>gav :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
+map <leader>gam :CtrlPClearCache<cr>\|:CtrlP app/models<cr>
+map <leader>gah :CtrlPClearCache<cr>\|:CtrlP app/helpers<cr>
+map <leader>gaa :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
+map <leader>gj :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
+map <leader>gc :CtrlPClearCache<cr>\|:CtrlP public/coffeescripts<cr>
 map <leader>gs :CtrlPClearCache<cr>\|:CtrlP public/stylesheets<cr>
-map <leader>gtc :CtrlPClearCache<cr>\|:CtrlP features<cr>
-map <leader>gtt :CtrlPClearCache<cr>\|:CtrlP spec<cr>
+map <leader>gf :CtrlPClearCache<cr>\|:CtrlP features<cr>
+map <leader>gt :CtrlPClearCache<cr>\|:CtrlP spec<cr>
 
 
 " ======================================
@@ -161,6 +181,7 @@ map <leader>v :view %%
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight set will
 " fail.
+
 set winheight=5
 set winminheight=5
 set winheight=999
