@@ -1,0 +1,40 @@
+# edit this rc file
+alias rcedit='mvim -f ~/.zshrc && source ~/.zshrc'
+
+# edit hosts file
+alias hostsedit='sudo mvim -f /etc/hosts && dscacheutil -flushcache'
+
+# remove ds store files
+alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
+
+# standard git commands
+alias g='git'
+alias gf='git fresh'
+alias ga='git add'
+alias gi='git init'
+alias gc='git commit -m'
+alias gac='git commit -am "auto commit"'
+alias gs='git status'
+alias gl='git log --pretty=oneline'
+alias gr='git rebase -i'
+alias gd='git diff'
+alias gb='git branch'
+alias gco='git checkout'
+alias gpr='git pull --rebase'
+
+# vagrant commands
+alias v='vagrant'
+alias vu='vagrant up'
+alias vs='vagrant status'
+alias vsh='vagrant ssh'
+alias vr='vagrant reload'
+alias vh='vagrant halt'
+alias vv='cd ~/vagrants/groupon'
+
+# colored output ls w/ details by default
+alias ls='ls -Gla'
+
+# aliases for pushd/popd
+alias p='pushd'
+alias o='popd'
+alias s='cd -'

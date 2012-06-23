@@ -9,6 +9,10 @@
 # Updated: 6/15/12
 #
 
+__git_files () {
+  _wanted files expl 'local files' _files
+}
+
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 autoload -Uz compinit
 compinit
