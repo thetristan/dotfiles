@@ -24,9 +24,14 @@ VIMODE_CMD=" ⨁ "
 VIMODE_INS=" ⨀ "
 VIMODE=$VIMODE_INS
 
+function vimode-prompt() {
+  VIMODE="${${KEYMAP/vicmd/${VIMODE_CMD}}/(main|viins)/${VIMODE_CMD}}"
+}
+
+
 # Set the VI mode indicator to show the current mode
 function zle-keymap-select {
-  VIMODE="${${KEYMAP/vicmd/${VIMODE_CMD}}/(main|viins)/${VIMODE_CMD}}"
+  vimode-prompt
   zle reset-prompt
 }
 

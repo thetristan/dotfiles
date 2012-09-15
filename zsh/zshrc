@@ -11,6 +11,6 @@
 #
 
 # Load all enabled modules
-for file in ~/dotfiles/zsh/modules-enabled/*; do
+for file in ~/dotfiles/zsh/modules/*; do
   source $file
 done

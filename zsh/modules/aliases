@@ -9,18 +9,26 @@ alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
 
 # standard git commands
 alias g='git'
+alias gg='git grep -n'
 alias gf='git fresh'
+alias gu='git fetch --all && git prune && git remote prune origin && git gc'
 alias ga='git add'
 alias gi='git init'
 alias gc='git commit -m'
 alias gac='git commit -am "auto commit"'
 alias gs='git status'
-alias gl='git log --pretty=oneline'
-alias gr='git rebase -i'
+alias gl='git log --graph --pretty=oneline'
+alias gr='git rebase'
+alias gri='git rebase -i'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gb='git branch'
 alias gco='git checkout'
 alias gpr='git pull --rebase'
+alias gcp='git cherry-pick'
+alias gclean='git fetch --all && git prune && git remote prune origin && git gc'
+alias glgfu="git log --graph --pretty=format:'%Cred%h%Creset %C(green bold)%an%Creset |%C(yellow)%d%Creset %s | %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short"
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %C(green bold)- %an %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short"
 
 # vagrant commands
 alias v='vagrant'
@@ -34,7 +42,6 @@ alias vv='cd ~/vagrants/groupon'
 # colored output ls w/ details by default
 alias ls='ls -Gla'
 
-# aliases for pushd/popd
-alias p='pushd'
-alias o='popd'
-alias s='cd -'
+# aliases for copy/paste on os x
+alias p='pbpaste'
+alias c='pbcopy'
