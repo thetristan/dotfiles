@@ -27,7 +27,7 @@ alias gco='git checkout'
 alias gpr='git pull --rebase'
 alias gcp='git cherry-pick'
 alias gclean='git fetch --all && git prune && git remote prune origin && git gc'
-alias glgfu="git log --graph --pretty=format:'%Cred%h%Creset %C(green bold)%an%Creset |%C(yellow)%d%Creset %s | %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short"
+alias glgfu="git log --graph --pretty=format:'%Cred%h%Creset · %C(green bold)%an%Creset ·%C(yellow)%d%Creset %s · %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %C(green bold)- %an %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short"
 
 # vagrant commands
@@ -41,6 +41,9 @@ alias vv='cd ~/vagrants/groupon'
 
 # colored output ls w/ details by default
 alias ls='ls -Gla'
+
+# use custom tmux starter
+alias tmux='~/dotfiles/tmux/tmux.sh'
 
 # aliases for copy/paste on os x
 alias p='pbpaste'
