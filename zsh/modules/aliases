@@ -4,6 +4,9 @@ alias rcedit='mvim -f ~/.zshrc && source ~/.zshrc'
 # edit hosts file
 alias hostsedit='sudo mvim -f /etc/hosts && dscacheutil -flushcache'
 
+# edit and reload nginx
+alias nginxedit="vim /usr/local/etc/nginx/nginx.conf && sudo nginx -s reload && clear_cache"
+
 # remove ds store files
 alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
 
