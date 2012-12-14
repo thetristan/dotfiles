@@ -1,14 +1,21 @@
 # edit this rc file
-alias rcedit='mvim -f ~/.zshrc && source ~/.zshrc'
+alias rcedit='vim ~/.zshrc && source ~/.zshrc'
 
 # edit hosts file
-alias hostsedit='sudo mvim -f /etc/hosts && dscacheutil -flushcache'
+alias hostsedit='sudo vim /etc/hosts && dscacheutil -flushcache'
 
 # edit and reload nginx
-alias nginxedit="vim /usr/local/etc/nginx/nginx.conf && sudo nginx -s reload && clear_cache"
+alias nginxedit='vim /usr/local/etc/nginx/nginx.conf && sudo nginx -s reload && clear_cache'
 
 # remove ds store files
 alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
+
+# edit vimrc
+alias vimedit='vim ~/.vimrc'
+
+# goto places
+alias cdpwa='cd /workspace/groupon/app'
+alias cdplotd='cd /workspace/groupon/performance/plot_device'
 
 # standard git commands
 alias g='git'
@@ -29,8 +36,6 @@ alias gb='git branch'
 alias gco='git checkout'
 alias gpr='git pull --rebase'
 alias gcp='git cherry-pick'
-alias gclean='git fetch --all && git prune && git remote prune origin && git gc'
-alias glgfu="git log --graph --pretty=format:'%Cred%h%Creset · %C(green bold)%an%Creset ·%C(yellow)%d%Creset %s · %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %C(green bold)- %an %C(black bold)%cd (%cr)%Creset' --abbrev-commit --date=short"
 
 # vagrant commands
@@ -43,7 +48,7 @@ alias vh='vagrant halt'
 alias vv='cd ~/vagrants/groupon'
 
 # colored output ls w/ details by default
-alias ls='ls -Gla'
+alias ls='ls -Glao'
 
 # use custom tmux starter
 alias tmux='~/dotfiles/tmux/tmux.sh'

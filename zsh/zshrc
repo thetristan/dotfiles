@@ -10,6 +10,8 @@
 # Updated: 6/15/12
 #
 
+ulimit -n 9999
+
 # Load all enabled modules
 for file in ~/dotfiles/zsh/modules/*; do
   source $file
