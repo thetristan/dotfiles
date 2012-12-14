@@ -60,11 +60,6 @@ hi IndentGuidesEven ctermbg=0
 hi SignColumn ctermbg=0
 
 " ======================================
-" TABULARIZE SHORTCUTS
-map <leader>>= :Tabularize /=
-map <leader>>; :Tabularize /:\zs
-
-" ======================================
 " EDITING SETTINGS
 " Show status line
 set ls=2
@@ -164,7 +159,7 @@ map <leader>v :view %%
 
 " ======================================
 " HIGHLIGHTING
-:noremap hh :set hlsearch! hlsearch?<CR>
+:noremap \ :set hlsearch! hlsearch?<CR>
 
 " ======================================
 " WINDOW SIZING
@@ -192,3 +187,14 @@ if has("gui_running")
   set guioptions=egmt
 endif
 
+" ======================================
+" DISABLE ARROW KEYS
+
+noremap <Left> <C-w><Left>
+noremap <Right> <C-w><Right>
+noremap <Down> <C-w><Down>
+noremap <Up> <C-w><Up>
+noremap! <Left> <Esc><C-w><Left>
+noremap! <Right> <Esc><C-w><Right>
+noremap! <Down> <Esc><C-w><Down>
+noremap! <Up> <Esc><C-w><Up>
