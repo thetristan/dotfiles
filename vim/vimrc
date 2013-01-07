@@ -2,9 +2,6 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-" FIX BACKSPACE
-set bs=2
-
 " Decrease timeout lengths to speed up vim responsiveness
 set timeout
 set timeoutlen=1000
@@ -16,6 +13,12 @@ let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/
 
 " POWERLINE
 python from powerline.ext.vim import source_plugin; source_plugin()
+
+" FIX BACKSPACING
+set backspace=indent,eol,start
+
+" POWERLINE
+source /usr/local/lib/python2.7/site-packages/powerline/ext/vim/source_plugin.vim
 
 " THEME SETTINGS
 syntax enable
