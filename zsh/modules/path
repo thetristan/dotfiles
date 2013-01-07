@@ -11,5 +11,5 @@
 #
 
 # Update path to include ~/bin
-export PATH=$PATH:~/bin
+export PATH=/usr/local/bin:$PATH:~/bin
 
