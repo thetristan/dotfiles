@@ -1,6 +1,6 @@
 ### Overview
 
-This is what I use to get set up on a new environment running zsh and mvim.
+This is what I use to get set up on a new environment configured for zsh, tmux, and vim.
 
 
 ### Installing
