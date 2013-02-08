@@ -7,18 +7,11 @@ set timeout
 set timeoutlen=1000
 set ttimeoutlen=100
 
-
 " CLANG COMPLETION
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 
-" POWERLINE
-python from powerline.ext.vim import source_plugin; source_plugin()
-
 " FIX BACKSPACING
 set backspace=indent,eol,start
-
-" POWERLINE
-source /usr/local/lib/python2.7/site-packages/powerline/ext/vim/source_plugin.vim
 
 " THEME SETTINGS
 syntax enable
@@ -149,7 +142,7 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
   \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --cached --others']
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --cached --exclude-standard --others']
 
 map <leader>gg :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
