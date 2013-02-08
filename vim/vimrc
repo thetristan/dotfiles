@@ -10,6 +10,10 @@ set timeout
 set timeoutlen=1000
 set ttimeoutlen=100
 
+
+" CLANG COMPLETION
+let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+
 " POWERLINE
 python from powerline.ext.vim import source_plugin; source_plugin()
 
@@ -95,7 +99,7 @@ set showbreak=\ \ \ \
 set cursorline
 
 " Map leader
-let mapleader=","
+let mapleader="m"
 
 " NEXT/PREV BUFFERS
 map <leader>[ :bp<CR>
@@ -128,9 +132,6 @@ map <leader>gs :CtrlPClearCache<cr>\|:CtrlP public/stylesheets<cr>
 map <leader>gf :CtrlPClearCache<cr>\|:CtrlP features<cr>
 map <leader>gt :CtrlPClearCache<cr>\|:CtrlP spec<cr>
 
-" Get into ex mode faster
-nnoremap ; :
-
 " CTRL-P
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$',
@@ -140,7 +141,7 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
   \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files -o']
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --cached --others']
 
 map <leader>gg :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
@@ -154,7 +155,7 @@ map <leader>e :edit %%
 map <leader>v :view %%
 
 " HIGHLIGHTING
-:noremap \ :set hlsearch! hlsearch?<CR>
+:noremap <leader>h :set hlsearch! hlsearch?<CR>
 
 " WINDOW SIZING
 " We have to have a winheight bigger than we want to set winminheight. But if
