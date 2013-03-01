@@ -18,7 +18,7 @@
   url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/vim-surround"]
   path = vim/bundle/vim-surround
-  url = vim/bundle/vim-surround
+  url = git://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/vim-indent-guides"]
 	path = vim/bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
@@ -31,6 +31,6 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/clang_complete"]
-	path = vim/bundle/clang_complete
-	url = git://github.com/Rip-Rip/clang_complete.git
+[submodule "vim/bundle/vim-unimpaired"]
+  path = vim/bundle/vim-unimpaired
+  url = git://github.com/tpope/vim-unimpaired.git
