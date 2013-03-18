@@ -1,0 +1,4 @@
+# Environment variables and such
+
+export EDITOR=vim
+export PATH=/usr/local/bin:$PATH:~/bin

@@ -1,14 +1,7 @@
-# ## ~/dotfiles/zsh/modules-available/prompt
-#
 # Prompt customization settings
 #
 # This module enables some fun things like VCS information and
 # vi mode keybindings on the prompt
-#
-# Author: Tristan Blease <tristan@bleaseinteractive.com>
-# Website: tristanblease.com
-# Updated: 6/15/12
-#
 
 # Enable the VCS info module and prompt settings
 autoload -Uz vcs_info

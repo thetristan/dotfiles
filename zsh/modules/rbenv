@@ -1,5 +1,5 @@
-# ## ~/dotfiles/zsh/modules-available/rvm
-#
+# rbenv settings
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Optimize Ruby for speed

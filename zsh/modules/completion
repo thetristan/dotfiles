@@ -1,13 +1,6 @@
-# ## ~/dotfiles/zsh/modules-available/completion
-#
 # Completion settings
 #
 # Mostly just contains settings generated after running compinstall
-#
-# Author: Tristan Blease <tristan@bleaseinteractive.com>
-# Website: tristanblease.com
-# Updated: 6/15/12
-#
 
 __git_files () {
   _wanted files expl 'local files' _files

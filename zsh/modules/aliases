@@ -1,3 +1,5 @@
+# Aliases to commonly used commands
+
 # edit this rc file
 alias rcedit='vim ~/.zshrc && source ~/.zshrc'
 

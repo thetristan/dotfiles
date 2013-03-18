@@ -1,16 +1,7 @@
-# ## ~/dotfiles/zsh/zshrc
-#
 # Simple control file that loads additional modules as needed.
 #
 # To enable modules, place them in ~/dotfiles/zsh/modules-available/
 # directory and symlink them into ~/dotfiles/zsh/modules-enabled/
-#
-# Author: Tristan Blease <tristan@bleaseinteractive.com>
-# Website: tristanblease.com
-# Updated: 6/15/12
-#
-
-ulimit -n 9999
 
 # Load all enabled modules
 for file in ~/dotfiles/zsh/modules/*; do
