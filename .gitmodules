@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vim-unimpaired"]
   path = vim/bundle/vim-unimpaired
   url = git://github.com/tpope/vim-unimpaired.git
+[submodule "vim/bundle/vim-lua-inspect"]
+	path = vim/bundle/vim-lua-inspect
+	url = git://github.com/xolox/vim-lua-inspect.git
