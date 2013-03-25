@@ -2,6 +2,9 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+" STOP THE DOUBLE PASTE
+set paste
+
 " Decrease timeout lengths to speed up vim responsiveness
 set timeout
 set timeoutlen=1000
