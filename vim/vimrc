@@ -23,6 +23,9 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
+" DISABLE LUA INSPECT
+let g:lua_inspect_events = ''
+
 " EDITING HELPERS
 " Replace current word with what's in the current register
 map <leader>r <ESC>viw"_dP
