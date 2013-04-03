@@ -7,3 +7,5 @@
 for file in ~/dotfiles/zsh/modules/*; do
   source $file
 done
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

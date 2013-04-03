@@ -12,25 +12,6 @@ promptinit
 # Enable vi mode on the prompt
 bindkey -v
 
-# Indicators to show whether the prompt is in command or insert mode
-VIMODE_CMD=" ⨁ "
-VIMODE_INS=" ⨀ "
-VIMODE=$VIMODE_INS
-
-function vimode-prompt() {
-  VIMODE="${${KEYMAP/vicmd/${VIMODE_CMD}}/(main|viins)/${VIMODE_CMD}}"
-}
-
-
-# Set the VI mode indicator to show the current mode
-function zle-keymap-select {
-  vimode-prompt
-  zle reset-prompt
-}
-
-# Ensure that zle-keymap-select is executed on KEYMAP changes
-zle -N zle-keymap-select
-
 # Set our bell
 bell=`tput bel`
 
@@ -49,5 +30,5 @@ precmd () {
 # Set our custom prompt formats
 PROMPT='%m %B%3c%(#.#.>)%b '
 PROMPT2="%_> "
-RPROMPT='${vcs_info_msg_0_}$VIMODE'
+RPROMPT='${vcs_info_msg_0_}'
 
