@@ -1,23 +1,10 @@
 # Aliases to commonly used commands
 
-# edit this rc file
-alias rcedit='vim ~/.zshrc && source ~/.zshrc'
-
 # edit hosts file
-alias hostsedit='sudo vim /etc/hosts && dscacheutil -flushcache'
-
-# edit and reload nginx
-alias nginxedit='vim /usr/local/etc/nginx/nginx.conf && sudo nginx -s reload && clear_cache'
+alias edithosts='sudo vim /etc/hosts && dscacheutil -flushcache'
 
 # remove ds store files
 alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
-
-# edit vimrc
-alias vimedit='vim ~/.vimrc'
-
-# goto places
-alias cdpwa='cd /workspace/groupon/app'
-alias cdplotd='cd /workspace/groupon/performance/plot_device'
 
 # standard git commands
 alias g='git'

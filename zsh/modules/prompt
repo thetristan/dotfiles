@@ -9,9 +9,6 @@ setopt prompt_subst
 autoload -U promptinit
 promptinit
 
-# Enable vi mode on the prompt
-bindkey -v
-
 # Set our bell
 bell=`tput bel`
 
