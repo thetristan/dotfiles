@@ -24,8 +24,8 @@ precmd () {
   echo -n "\033]1;$USERNAME@$HOST$bell\033]2;$PWD> - $USERNAME@$HOST ($status)$bell"
 }
 
+
 # Set our custom prompt formats
-PROMPT='%m %B%3c%(#.#.>)%b '
+PROMPT='%m${vcs_info_msg_0_} %B%3c%(#.#.>)%b '
 PROMPT2="%_> "
-RPROMPT='${vcs_info_msg_0_}'
 
