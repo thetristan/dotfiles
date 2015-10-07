@@ -1,0 +1,4 @@
+alias dup="docker-machine start docker1"
+alias denv="eval \$(docker-machine env docker1 | grep -v \#)"
+
+[[ "Running" == $(docker-machine status docker1) ]] && denv
