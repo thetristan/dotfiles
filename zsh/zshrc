@@ -2,6 +2,9 @@
 #
 # To enable modules, place them in ~/dotfiles/zsh/modules-available/
 # directory and symlink them into ~/dotfiles/zsh/modules-enabled/
+#
+
+export SHELL=/usr/local/bin/zsh
 
 # Load all enabled modules
 for file in ~/dotfiles/zsh/modules/*; do
