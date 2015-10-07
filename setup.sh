@@ -41,9 +41,6 @@ function write-dot-files() {
     # Tmux configuration
     replace-dotfile .tmux.conf dotfiles/tmux/tmux.conf
 
-    # dotjs - see http://defunkt.io/dotjs/
-    replace-dotfile .js dotfiles/js
-
     # Show the results of our operation
     echo Updated the following files:
     echo $OUTPUT | tr "|" "\n" | column -t -s ' '
