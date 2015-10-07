@@ -2,6 +2,15 @@
 #
 # This module enables some fun things like VCS information and
 # vi mode keybindings on the prompt
+#
+bindkey -v
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+export KEYTIMEOUT=1
 
 # Enable the VCS info module and prompt settings
 autoload -Uz vcs_info
@@ -21,11 +30,20 @@ precmd () {
   zstyle ':vcs_info:*'     actionformats      "%c %u [%s|%b|%a]"
   zstyle ':vcs_info:*'     formats            "[%s|%b]"
   zstyle ':vcs_info:git:*' formats            "%c %u [%s|%b]"
-  echo -n "\033]1;$USERNAME@$HOST$bell\033]2;$PWD> - $USERNAME@$HOST ($status)$bell"
+
+  # Set our custom prompt formats
+  PS1='%m${vcs_info_msg_0_}%B%3c%(#.#.>)%b '
+  PS2="%_> "
 }
 
+autoload -U colors && colors
 
-# Set our custom prompt formats
-PROMPT='%m${vcs_info_msg_0_} %B%3c%(#.#.>)%b '
-PROMPT2="%_> "
+function zle-line-init zle-keymap-select {
+  VIM_PROMPT="%{$fg_bold[green]%}[% !]%  %{$reset_color%}"
+  MODE_INFO="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}"
+  PS1='%m${vcs_info_msg_0_} $MODE_INFO%B%3c%(#.#.>)%b '
+  zle reset-prompt
+}
 
+zle -N zle-line-init
+zle -N zle-keymap-select
