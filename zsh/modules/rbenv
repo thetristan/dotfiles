@@ -1,3 +1,7 @@
-# rbenv settings
-eval "$(rbenv init -)"
+command -v rbenv
+exists=$?
+
+if [[ $exists == 0 ]]; then
+  eval "$(rbenv init -)"
+fi
 
