@@ -18,7 +18,7 @@ zstyle ':vcs_info:*'     formats            " [%s|%b%u%c]"
 zstyle ':vcs_info:*'     unstagedstr        $'\u25cf'
 zstyle ':vcs_info:*'     stagedstr          $'\u25cf'
 
-PROMPT=$'[%D{%FT%H:%M:%S%z}]${vcs_info_msg_0_} %n@%m:%~ \n> '
+PROMPT=$'\n[%D{%FT%H:%M:%S%z}]${vcs_info_msg_0_} %n@%m %~ \n> '
 PROMPT2="%_> "
 
 # If we're in a directory under version control, make sure we fetch

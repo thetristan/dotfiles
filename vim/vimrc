@@ -1,9 +1,36 @@
-" PATHOGEN
-call pathogen#infect()
-call pathogen#helptags()
+" Add vundle and enable
+set nocompatible
+filetype off
 
-" STOP THE DOUBLE PASTE
-set paste
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Plugins
+Plugin 'isRuslan/vim-es6'
+
+Plugin 'mileszs/ack.vim'
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'kchmck/vim-coffee-script'
+
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'bling/vim-airline'
+
+Plugin 'wombat256.vim'
+
+Plugin 'godlygeek/tabular'
+
+Plugin 'altercation/vim-colors-solarized'
+
+call vundle#end()
+
+filetype plugin indent on
 
 " Decrease timeout lengths to speed up vim responsiveness
 set timeout
@@ -17,14 +44,14 @@ set backspace=indent,eol,start
 syntax enable
 colorscheme wombat256mod
 
+" ENABLE FILETYPE PLUGINS
+filetype plugin on
+
 " FOLDING SETTINGS
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
-
-" DISABLE LUA INSPECT
-let g:lua_inspect_events = ''
 
 " EDITING HELPERS
 " Replace current word with what's in the current register
@@ -82,8 +109,8 @@ set noswapfile
 set hidden
 
 " Tab settings
-set cindent
-set cinkeys=0{,0},0),:,!^F,o,O,e
+set nocindent
+set smartindent
 set autoindent
 set smarttab
 set expandtab
@@ -119,20 +146,6 @@ map j gj
 imap <down> <C-o>gj
 map E ge
 
-" RAILS-SPECIFIC CTRLP MAPPINGS
-map <leader>gac :CtrlPClearCache<cr>\|:CtrlP app/controllers<cr>
-map <leader>gav :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
-map <leader>gam :CtrlPClearCache<cr>\|:CtrlP app/models<cr>
-map <leader>gah :CtrlPClearCache<cr>\|:CtrlP app/helpers<cr>
-map <leader>gaa :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
-map <leader>gj :CtrlPClearCache<cr>\|:CtrlP public/javascripts<cr>
-map <leader>gc :CtrlPClearCache<cr>\|:CtrlP public/coffeescripts<cr>
-map <leader>gs :CtrlPClearCache<cr>\|:CtrlP public/stylesheets<cr>
-map <leader>gf :CtrlPClearCache<cr>\|:CtrlP features<cr>
-map <leader>gt :CtrlPClearCache<cr>\|:CtrlP spec<cr>
-map <leader>gp :CtrlPClearCache<cr>\|:CtrlP services/api<cr>
-map <leader>gl :CtrlPClearCache<cr>\|:CtrlP lib<cr>
-
 " CTRL-P
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$',
@@ -148,7 +161,9 @@ map <leader>gg :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 map <leader>m :CtrlPMixed<CR>
 map <leader>gr :CtrlPMRU<CR>
-map <leader>tt :silent !ctags %<CR> :CtrlPBufTag<CR>
+map <leader>t :CtrlPBufTag<CR>
+map <leader>tt :CtrlPTag<CR>
+map <leader>ttt :silent !ctags -R .<CR>
 
 " FILE NAVIGATION
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -162,8 +177,8 @@ map <leader>v :view %%
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight set will
 " fail.
-set winheight=5
-set winminheight=5
+set winheight=10
+set winminheight=10
 set winheight=999
 
 " TAGLIST
@@ -189,3 +204,10 @@ inoremap <Left> <Esc><C-w><Left>
 inoremap <Right> <Esc><C-w><Right>
 inoremap <Down> <Esc><C-w><Down>
 inoremap <Up> <Esc><C-w><Up>
+
+" ENABLE POWERLINE FONTS IN AIRLINE
+let g:airline_powerline_fonts = 1
+
+" ACK FOR WORD UNDER CURSOR
+noremap <Leader>a :Ack '\b<cword>\b'<cr>
+
