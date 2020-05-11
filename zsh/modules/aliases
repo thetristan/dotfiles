@@ -6,6 +6,9 @@ alias edithosts='sudo vim /etc/hosts && dscacheutil -flushcache'
 # remove ds store files
 alias rmdsstore='find . -name .DS_Store -type f -exec rm {} \;'
 
+# kubectl
+alias k='kubectl'
+
 # standard git commands
 alias g='git'
 alias gg='git grep -n'
